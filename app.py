@@ -264,11 +264,10 @@ if image_file is not None:
                             "Please try another question."
                         )
 
-                except Exception:
+                
+                except Exception as e:
                     st.error(
-                        "Gemini could not analyze the image. "
-                        "Please check your API quota and connection, "
-                        "then try again."
+                        f"Gemini error: {type(e).__name__}: {e}"
                     )
 
             else:
